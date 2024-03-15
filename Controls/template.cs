@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AWI_Toolkit
+namespace AWI_Toolkit.Controls
 {
-    public partial class Form1 : Form
+    public partial class template : UserControl
     {
-        public Form1()
+        public template()
         {
             InitializeComponent();
         }
