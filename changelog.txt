@@ -1,2 +1,7 @@
+# v1.1_beta:
+- Added splash screen.
+- Added changelog control.
+- Update controls.
+
 # v1.0_beta: 
 - Initial commit.
