@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AWI_Toolkit.Controls
 {
-    public partial class template : UserControl
+    public partial class Template : UserControl
     {
-        public template()
+        public Template()
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace AWI_Toolkit.Controls
 {
-    partial class template
+    partial class Template
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,41 +29,42 @@ namespace AWI_Toolkit.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblControlName = new System.Windows.Forms.Label();
+            this.lblControlDescription = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblControlName
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("SF Pro Text", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 40);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ControlName";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblControlName.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblControlName.Font = new System.Drawing.Font("SF Pro Text", 14F, System.Drawing.FontStyle.Bold);
+            this.lblControlName.ForeColor = System.Drawing.Color.White;
+            this.lblControlName.Location = new System.Drawing.Point(0, 0);
+            this.lblControlName.Name = "lblControlName";
+            this.lblControlName.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.lblControlName.Size = new System.Drawing.Size(171, 40);
+            this.lblControlName.TabIndex = 0;
+            this.lblControlName.Text = "ControlName";
+            this.lblControlName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // lblControlDescription
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label2.Font = new System.Drawing.Font("SF Pro Text", 12F);
-            this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(177, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(513, 40);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ControlDescription";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblControlDescription.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblControlDescription.Font = new System.Drawing.Font("SF Pro Text", 12F);
+            this.lblControlDescription.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblControlDescription.Location = new System.Drawing.Point(177, 0);
+            this.lblControlDescription.Name = "lblControlDescription";
+            this.lblControlDescription.Size = new System.Drawing.Size(513, 40);
+            this.lblControlDescription.TabIndex = 1;
+            this.lblControlDescription.Text = "ControlDescription";
+            this.lblControlDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lblControlName);
+            this.panel1.Controls.Add(this.lblControlDescription);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -94,8 +95,8 @@ namespace AWI_Toolkit.Controls
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblControlName;
+        private System.Windows.Forms.Label lblControlDescription;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
     }
