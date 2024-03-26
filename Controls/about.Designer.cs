@@ -1,7 +1,7 @@
 ﻿
 namespace AWI_Toolkit.Controls
 {
-    partial class about
+    partial class About
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,11 +30,11 @@ namespace AWI_Toolkit.Controls
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtChangelog = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtChangelog = new System.Windows.Forms.RichTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -49,39 +49,16 @@ namespace AWI_Toolkit.Controls
             this.panel2.Size = new System.Drawing.Size(690, 412);
             this.panel2.TabIndex = 5;
             // 
-            // panel1
+            // label3
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(690, 40);
-            this.panel1.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label2.Font = new System.Drawing.Font("SF Pro Text", 12F);
-            this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(177, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(513, 40);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ControlDescription";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("SF Pro Text", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 40);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ControlName";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Font = new System.Drawing.Font("SF Pro Text", 14F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(22, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(171, 40);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Changelog :";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtChangelog
             // 
@@ -98,16 +75,40 @@ namespace AWI_Toolkit.Controls
             this.txtChangelog.TabIndex = 0;
             this.txtChangelog.Text = "changelog file goes here...";
             // 
-            // label3
+            // panel1
             // 
-            this.label3.Font = new System.Drawing.Font("SF Pro Text", 14F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(22, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(171, 40);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Changelog :";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(690, 40);
+            this.panel1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("SF Pro Text", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label1.Size = new System.Drawing.Size(171, 40);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ControlName";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label2.Font = new System.Drawing.Font("SF Pro Text", 12F);
+            this.label2.ForeColor = System.Drawing.Color.DarkGray;
+            this.label2.Location = new System.Drawing.Point(177, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(513, 40);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "ControlDescription";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // about
             // 

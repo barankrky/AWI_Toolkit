@@ -12,10 +12,10 @@ using System.Net;
 
 namespace AWI_Toolkit.Controls
 {
-    public partial class about : UserControl
+    public partial class About : UserControl
     {
 
-        public about()
+        public About()
         {
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
