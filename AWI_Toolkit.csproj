@@ -167,7 +167,6 @@
     <None Include="Resources\awi.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\resources\fonts\FontReg.exe" />
     <Content Include="changelog.txt" />
   </ItemGroup>
   <ItemGroup />
