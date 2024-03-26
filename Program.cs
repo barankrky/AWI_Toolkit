@@ -16,7 +16,7 @@ namespace AWI_Toolkit
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainWindow());
+            Application.Run(new SplashScreen());
         }
     }
 }
