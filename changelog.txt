@@ -1,3 +1,8 @@
+# v1.2_beta:
+- Added font file control.
+- Added application data directory.
+- Update controls.
+
 # v1.1_beta:
 - Added splash screen.
 - Added changelog control.
