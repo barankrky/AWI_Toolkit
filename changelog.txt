@@ -1,3 +1,7 @@
+# v1.3_beta:
+- Code optimization.
+- Update controls
+
 # v1.2_beta:
 - Added font file control.
 - Added application data directory.
