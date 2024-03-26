@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
-using System.Windows.Forms;
-using System.Drawing.Text;
+﻿using AWI_Toolkit.Modules;
+using System;
 using System.IO;
-using AWI_Toolkit.Modules;
-using AWI_Toolkit;
+using System.Net;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AWI_Toolkit
 {
@@ -36,33 +28,6 @@ namespace AWI_Toolkit
             return File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), ContentFontName.ToUpper()));
         }
 
-        private async void checkResources()
-        {
-            setStatus("Checking resources...");
-            await Task.Delay(1000);
-            // Check the font file is installed.
-
-            if (IsFontInstalled("sf.ttf"))
-            {
-                setStatus("Font already installed.");
-            }
-            else
-            {
-                setStatus("Font not found. Attempting to install...");
-                executer.InstallFontFile();
-            }
-            
-        }
-
-        private async void Initialize()
-        {
-            checkResources();
-            await Task.Delay(3000);
-            startMainWindow();
-        }
-
-        
-
         public SplashScreen()
         {
             InitializeComponent();
@@ -70,9 +35,66 @@ namespace AWI_Toolkit
 
         private async void SplashScreen_Load(object sender, EventArgs e)
         {
+            setStatus("Loading...");
+            await Task.Delay(1500);
             setStatus("Initializing...");
-            Initialize();
+            await Task.Delay(1500);
+            setStatus("Checking resources...");
+            await Task.Delay(500);
+            // Check the font file is installed.
 
+            if (IsFontInstalled("sf.ttf"))
+            {
+                setStatus("Font already installed.");
+                await Task.Delay(500);
+            }
+            else
+            {
+                setStatus("Font not found. Attempting to install...");
+                await Task.Delay(500);
+                executer.InstallFontFile();
+                setStatus("Font installed. Restarting application...", 3);
+                await Task.Delay(1500);
+                Application.Restart();
+                Environment.Exit(0);
+            }
+
+            // Get latest changelog from github and save to disk.
+
+            setStatus("Getting latest changelog from github.com", 3);
+            await Task.Delay(1500);
+
+            string appdataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)) + @"\barankrky\awi_toolkit";
+
+            if (Directory.Exists(appdataPath))
+            {
+                // Directory exists.
+            }
+            else
+            {
+                Directory.CreateDirectory(appdataPath);
+            }
+            string changelogFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)) + @"\barankrky\awi_toolkit\changelog.txt";
+
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            string changelogURL = @"https://raw.githubusercontent.com/barankrky/AWI_Toolkit/master/changelog.txt";
+
+            try
+            {
+                WebClient client = new WebClient();
+                string reply = client.DownloadString(changelogURL);
+                File.WriteAllText(changelogFile, reply);
+            }
+            catch (Exception ex)
+            {
+                setStatus(ex.Message);
+            }
+
+            setStatus("Loading...");
+            await Task.Delay(1500);
+
+            startMainWindow();
         }
     }
 }
