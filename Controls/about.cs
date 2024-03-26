@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
 using System.Net;
+using System.Windows.Forms;
 
 namespace AWI_Toolkit.Controls
 {
@@ -28,13 +21,11 @@ namespace AWI_Toolkit.Controls
             label1.Text = appName;
             label2.Text = appVersion + " by " + appAuthor;
 
-            string changelogURL = @"https://raw.githubusercontent.com/barankrky/AWI_Toolkit/master/changelog.txt";
+            string changelogFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)) + @"\barankrky\awi_toolkit\changelog.txt";
 
             try
             {
-                WebClient client = new WebClient();
-                string reply = client.DownloadString(changelogURL);
-                txtChangelog.Text = reply;
+                txtChangelog.Text = File.ReadAllText(changelogFile);
             }
             catch (Exception ex)
             {
