@@ -79,7 +79,7 @@ namespace AWI_Toolkit.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to v1.0_beta.
+        ///   Looks up a localized string similar to v1.2_beta.
         /// </summary>
         internal static string appVersion {
             get {
