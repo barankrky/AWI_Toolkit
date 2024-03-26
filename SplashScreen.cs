@@ -7,13 +7,13 @@ using System.Windows.Forms;
 
 namespace AWI_Toolkit
 {
-    public partial class SplashScreen : Form
+    public  partial class SplashScreen : Form
     {
         ShellExecutioner executer = new ShellExecutioner();
 
-        private async void setStatus(string statusText, int waitTime = 1) { 
+        private async void setStatus(string statusText, int waitTime = 5) { 
             statusLabel.Text = statusText;
-            await Task.Delay(waitTime);
+            await Task.Delay(waitTime * 100);
         }
 
         private void startMainWindow()
@@ -33,36 +33,29 @@ namespace AWI_Toolkit
             InitializeComponent();
         }
 
-        private async void SplashScreen_Load(object sender, EventArgs e)
+        private void checkFontFile()
         {
-            setStatus("Loading...");
-            await Task.Delay(1500);
-            setStatus("Initializing...");
-            await Task.Delay(1500);
-            setStatus("Checking resources...");
-            await Task.Delay(500);
             // Check the font file is installed.
 
             if (IsFontInstalled("sf.ttf"))
             {
                 setStatus("Font already installed.");
-                await Task.Delay(500);
             }
             else
             {
                 setStatus("Font not found. Attempting to install...");
-                await Task.Delay(500);
                 executer.InstallFontFile();
-                setStatus("Font installed. Restarting application...", 3);
-                await Task.Delay(1500);
+                setStatus("Font installed. Restarting application...", 15);
                 Application.Restart();
                 Environment.Exit(0);
             }
 
+        }
+        private void checkChangelog()
+        {
             // Get latest changelog from github and save to disk.
 
-            setStatus("Getting latest changelog from github.com", 3);
-            await Task.Delay(1500);
+            setStatus("Getting latest changelog from github.com");
 
             string appdataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)) + @"\barankrky\awi_toolkit";
 
@@ -90,10 +83,22 @@ namespace AWI_Toolkit
             {
                 setStatus(ex.Message);
             }
+        }
 
+        private async void SplashScreen_Load(object sender, EventArgs e)
+        {
+            setStatus("Loading..."); 
+            await Task.Delay(1000);
+            setStatus("Initializing...");
+            await Task.Delay(500);
+            setStatus("Checking resources...");
+            await Task.Delay(500);
+            checkFontFile();
+            await Task.Delay(500);
+            checkChangelog();
+            await Task.Delay(500);
             setStatus("Loading...");
             await Task.Delay(1500);
-
             startMainWindow();
         }
     }
