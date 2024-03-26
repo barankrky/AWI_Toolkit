@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing.Text;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Environment;
+using System.Reflection;
 
 namespace AWI_Toolkit.Modules
 {
@@ -22,14 +27,17 @@ namespace AWI_Toolkit.Modules
 
         public void InstallFontFile()
         {
-            var info = new ProcessStartInfo()
-            {
-                FileName = @"bin\resources\fonts\FontReg.exe",
-                Arguments = "/copy",
-                UseShellExecute = false,
-                WindowStyle = ProcessWindowStyle.Hidden
-            };
-            Process.Start(info);
+            string fontFile = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) 
+                + @"\bin\resources\fonts\sf.ttf";
+
+            File.Copy(fontFile, 
+                Path.Combine(GetFolderPath(SpecialFolder.Windows),
+                "Fonts", "sf.ttf"));
+
+            Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.LocalMachine.CreateSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts");
+            key.SetValue("SF Pro Text Regular (TrueType)", "sf.ttf");
+            key.Close();
+
         }
 
     }
