@@ -97,6 +97,7 @@
             this.appNavBar.Controls.Add(this.btnCleanup);
             this.appNavBar.Controls.Add(this.btnAbout);
             this.appNavBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.appNavBar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.appNavBar.Location = new System.Drawing.Point(0, 169);
             this.appNavBar.Name = "appNavBar";
             this.appNavBar.Size = new System.Drawing.Size(192, 331);
@@ -104,6 +105,7 @@
             // 
             // btnCleanup
             // 
+            this.btnCleanup.AutoSize = true;
             this.btnCleanup.FlatAppearance.BorderSize = 0;
             this.btnCleanup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCleanup.Font = new System.Drawing.Font("SF Pro Text", 13F);
@@ -118,6 +120,7 @@
             // 
             // btnAbout
             // 
+            this.btnAbout.AutoSize = true;
             this.btnAbout.FlatAppearance.BorderSize = 0;
             this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbout.Font = new System.Drawing.Font("SF Pro Text", 13F);
@@ -165,6 +168,7 @@
             this.appTopBar.ResumeLayout(false);
             this.appSidePanel.ResumeLayout(false);
             this.appNavBar.ResumeLayout(false);
+            this.appNavBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
